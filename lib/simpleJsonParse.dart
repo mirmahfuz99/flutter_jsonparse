@@ -20,8 +20,9 @@ List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }
-
+// Photo Class that contains data from our network requests
 class Photo {
+
   final int albumId;
   final int id;
   final String title;
@@ -30,6 +31,7 @@ class Photo {
 
   Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
 
+  //Fectory constructor that allow us to cretate a Photo From JSON
   factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(
       albumId: json['albumId'] as int,
