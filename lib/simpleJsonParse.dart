@@ -31,6 +31,7 @@ class Photo {
 
   Photo({this.albumId, this.id, this.title, this.url, this.thumbnailUrl});
 
+
   //Fectory constructor that allow us to cretate a Photo From JSON
   factory Photo.fromJson(Map<String, dynamic> json) {
     return Photo(
